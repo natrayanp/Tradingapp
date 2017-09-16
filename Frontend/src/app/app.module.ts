@@ -1,12 +1,16 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
 import { MdSidenavModule } from '@angular/material';
 import { MdToolbarModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { MdFormFieldModule } from '@angular/material';
+import { MdAutocompleteModule } from '@angular/material';
+import { MdCard } from '@angular/material';
 
 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -26,6 +30,10 @@ import { OrdersComponent } from './tradedet/orders/orders.component';
 import { ToolbarComponent } from './weblayout/toolbar/toolbar.component';
 import { FooterComponent } from './weblayout/footer/footer.component';
 import { BodyComponent } from './weblayout/body/body.component';
+import { UserCardComponent } from './tradedet/users/user-card/user-card.component';
+import { UserListComponent } from './tradedet/users/user-list/user-list.component';
+//import {InterceptorModule} from './app.interceptor.module';
+
 
 @NgModule({
   declarations: [
@@ -38,11 +46,14 @@ import { BodyComponent } from './weblayout/body/body.component';
     TradedetComponent,
     ToolbarComponent,
     FooterComponent,
-    BodyComponent
+    BodyComponent,
+    UserCardComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MdSidenavModule,
     MdToolbarModule,
     MdButtonModule,
@@ -50,12 +61,15 @@ import { BodyComponent } from './weblayout/body/body.component';
     FlexLayoutModule,
     MdInputModule,
     MdFormFieldModule,
+    MdAutocompleteModule,    
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(ROUTES)
-    
+ //   InterceptorModule,
+    RouterModule.forRoot(ROUTES)       
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
